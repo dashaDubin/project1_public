@@ -14,6 +14,11 @@ The only valid argument for the Vm for this task i see is that i had troubles de
 escpecially the one with the sql database and blob storage. I managed build the project form like 5th or 6th attempt and i spent
 couple of hours redeploying the app on no aparent reason. So lets see how this works, maybe i just had some bad luck.
 
+### Re-submission
+On comparison of scalability, availability and workflow
+The choice of the platform, App services vs VM depends on the problem a user needs to solve in a particular situation. VM offers a full freedom of choice of the environment a user can create and maintain for the application. It also provides a user with an opportunity to control webservers, traffic and your application's configuration. However that comes at a cost of maintaining the whole VM and app by yourself, monitor the security and OS updates etc... Whereas if you don't need such a full control of your application, you can go ahead and use an app service. It gives you an advantage of seemless deployment and integrated github, you can maintain prod and dev environments simultaneously. But your app has to be constant throughtout its lifetime, the resources it needs, tha bandwidth etc.  
+
+
 ### Assess app changes that would change your decision.
 If it will work badly with an app service in terms of app deployment i will switch to VM. 
 I would consider switching to a VM as well if i would need a complete control over the OS,
