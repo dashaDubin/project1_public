@@ -18,6 +18,11 @@ couple of hours redeploying the app on no aparent reason. So lets see how this w
 On comparison of scalability, availability and workflow
 The choice of the platform, App services vs VM depends on the problem a user needs to solve in a particular situation. VM offers a full freedom of choice of the environment a user can create and maintain for the application. It also provides a user with an opportunity to control webservers, traffic and your application's configuration. However that comes at a cost of maintaining the whole VM and app by yourself, monitor the security and OS updates etc... Whereas if you don't need such a full control of your application, you can go ahead and use an app service. It gives you an advantage of seemless deployment and integrated github, you can maintain prod and dev environments simultaneously. But your app has to be constant throughtout its lifetime, the resources it needs, tha bandwidth etc.  
 
+### Re-submission #2
+I was asked to add about availability and scalability of VMs vs app services (sorry it had to take two attempts, i thought it has to apply to our concrete case, and since im on a free tier for app services and i was rather certain i didn't want to set up a VM for this task, i didnt really try to discuss the topic...).
+So, as for the availablity, App Services come with a high SLA, that guarantee the same availability as VMs with two instances, which is kind of a premium service. However, since we are using the Free Tier there is no SLA for the App service there, so it loses its advantage over the VM for our purposes. 
+Scalability for app services depends on the tier as well. To scale up or out you need to purchase higher tier for your service plan. Then, depending on your purpose you can either increase the properties of the service (like cpu or memory etc) or increase the number of instances that run your app. For VMs you have load balancer and scale sets for autoscaling that allows to create a group of load-balanced VM that can increase or decrease on demand or according to a schedule. This requires some DevOps knowledge as well... :) Again, since we operate on a free tier scalability was not under consideration :) 
+
 
 ### Assess app changes that would change your decision.
 If it will work badly with an app service in terms of app deployment i will switch to VM. 
